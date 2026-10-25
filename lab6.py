@@ -6,15 +6,15 @@ class HistoricalFigure:
         self._age_1 = age_1
         self.age_2 = age_2
         self.text = text
-        print(f"Исторический персонаж {self.name} записан.")
+        print(f"РСЃС‚РѕСЂРёС‡РµСЃРєРёР№ РїРµСЂСЃРѕРЅР°Р¶ {self.name} Р·Р°РїРёСЃР°РЅ.")
     
     def __str__(self):
-        return (f"ФИО: {self.name}\n"
-                f"Годы жизни: {self._age_1} - {self.age_2}\n"
-                f"Чем известин: {self.text}")
+        return (f"Р¤РРћ: {self.name}\n"
+                f"Р“РѕРґС‹ Р¶РёР·РЅРё: {self._age_1} - {self.age_2}\n"
+                f"Р§РµРј РёР·РІРµСЃС‚РёРЅ: {self.text}")
     
     def __del__(self):
-        print(f"Исторический персонаж  {self.name} удалён.")
+        print(f"РСЃС‚РѕСЂРёС‡РµСЃРєРёР№ РїРµСЂСЃРѕРЅР°Р¶  {self.name} СѓРґР°Р»С‘РЅ.")
 
     @property
     def age_1(self):
@@ -28,27 +28,27 @@ class HistoricalFigure:
 
     def get_age_at_death(self):
         age = self.__calculate_age()  
-        return f"{self.name} жил до {self.age_2} и прожил {age} лет."
+        return f"{self.name} Р¶РёР» РґРѕ {self.age_2} Рё РїСЂРѕР¶РёР» {age} Р»РµС‚."
 
     def read_attribute(self, attribute_name):
-        return getattr(self, attribute_name, "Атрибут не найден")
+        return getattr(self, attribute_name, "РђС‚СЂРёР±СѓС‚ РЅРµ РЅР°Р№РґРµРЅ")
 
     def delete_attribute(self, attribute_name):
         if hasattr(self, attribute_name):
             delattr(self, attribute_name)
-            return f"Атрибут '{attribute_name}' удалён"
+            return f"РђС‚СЂРёР±СѓС‚ '{attribute_name}' СѓРґР°Р»С‘РЅ"
         else:
-            return f"Атрибут '{attribute_name}' не существует"
+            return f"РђС‚СЂРёР±СѓС‚ '{attribute_name}' РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚"
     
 
-num_i = int(input("Сколько надо ввести исторических персонажей: "))
+num_i = int(input("РЎРєРѕР»СЊРєРѕ РЅР°РґРѕ РІРІРµСЃС‚Рё РёСЃС‚РѕСЂРёС‡РµСЃРєРёС… РїРµСЂСЃРѕРЅР°Р¶РµР№: "))
 users = []
 for i in range(0,num_i):
     if __name__ == "__main__":
-        name = input("Фамилия И.О.:  ")
-        age_1 = int(input("Дата рождения:  "))
-        age_2 = int(input("Дата смерти:   "))
-        text = input("Чем известин:  ")
+        name = input("Р¤Р°РјРёР»РёСЏ Р.Рћ.:  ")
+        age_1 = int(input("Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:  "))
+        age_2 = int(input("Р”Р°С‚Р° СЃРјРµСЂС‚Рё:   "))
+        text = input("Р§РµРј РёР·РІРµСЃС‚РёРЅ:  ")
         users.append(HistoricalFigure(name, age_1, age_2, text)) 
 
 print('------')
@@ -56,7 +56,7 @@ print('------')
 for i in range(0,num_i):
     print(users[i])
     print(users[i].get_age_at_death())
-    print("Год раждения: ")
+    print("Р“РѕРґ СЂР°Р¶РґРµРЅРёСЏ: ")
     print(users[i].age_1)
     print(' ')
     print(users[i].read_attribute('text'))
